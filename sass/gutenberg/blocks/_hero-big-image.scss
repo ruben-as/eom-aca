@@ -1,0 +1,32 @@
+.block-hero-big-image {
+  > .image {
+    align-items: end;
+    display: grid;
+    height: 633px;
+
+    img {
+      z-index: 0;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: $container-ipad-landscape) {
+      align-items: end;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $width-grid-base + 40px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .content {
+    @include content-box();
+    background-color: var(--color-white);
+  }
+}

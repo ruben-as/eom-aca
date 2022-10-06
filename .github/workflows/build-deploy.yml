@@ -1,0 +1,22 @@
+on: 
+  push:
+    branches:
+      - main
+name: Desplegar en producción
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v2
+    
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      with:
+        server: 147.135.174.27
+        username: ${{ secrets.FTP_USER }}
+        server-dir: public_html/wp-content/themes/eom-aca/
+        password: ${{ secrets.FTP_PASS }}
+        protocol: ftps
+        exclude: "[.git*, .git*/**, **/.git*/**, node_modules, node_modules/**, yarn.lock, gulpfile.js, package-lock.json, package.json, package.js]"

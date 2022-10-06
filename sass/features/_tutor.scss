@@ -1,0 +1,21 @@
+.tutor-container {
+    padding-top: var(--tutor-gutter-x, 120px);
+}
+body.single-courses .tutor-container {
+    padding-bottom: var(--tutor-gutter-x, 60px);
+}
+.tutor-pb-80 {
+    padding-bottom: 0;
+}
+.tutor-course-single-content-wrapper {
+    margin-top: 80px;
+	border-top: 1px solid var(--color-eom-verde);
+}
+.tutor-fs-6 {
+    font-size: 15px;
+}
+
+// Fix student registrer page
+.page-id-20 .site-main  {
+	margin-top: 80px;
+}
